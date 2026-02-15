@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kars Print - Премиальная печать портретов и картин ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
+                        <circle cx="22.5" cy="22.5" r="22.5" fill="url(#paint0_linear)"/>
+                        <path d="M13 23L19 29L32 16" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="0" y1="0" x2="45" y2="45">
+                                <stop stop-color="#FF3CAC"/>
+                                <stop offset="0.5" stop-color="#784BA0"/>
+                                <stop offset="1" stop-color="#2B86C5"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Kars <span class="logo-accent">Print</span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Главная</a></li>
+                <li><a href="#works" class="nav-link">Галерея</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#promo" class="nav-link">Акции</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-admin-nav" onclick="openAdminPanel()">
+                    👤 Админ
+                </button>
+                <button class="cta-btn-nav" onclick="scrollToContact()">
+                    🎨 Заказать сейчас
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-animation">
+            <div class="color-blob blob-1"></div>
+            <div class="color-blob blob-2"></div>
+            <div class="color-blob blob-3"></div>
+            <div class="color-blob blob-4"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge-wrapper">
+                    <div class="hero-badge pulse">
+                        ⚡ Топ-1 по качеству печати в России
+                    </div>
+                </div>
+                
+                <h1 class="hero-title">
+                    Превратите <span class="gradient-text">моменты</span><br>
+                    в <span class="rainbow-text">шедевры</span> 🎨
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Профессиональная печать на холсте премиум-класса.<br>
+                    <strong>Гарантия 50 лет</strong> • <strong>Доставка 24 часа</strong> • <strong>Скидка до 40%</strong>
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="btn-primary-hero" onclick="scrollToContact()">
+                        <span class="btn-shine"></span>
+                        🚀 Создать шедевр сейчас
+                    </button>
+                    <button class="btn-secondary-hero" onclick="scrollToWorks()">
+                        👀 Смотреть примеры
+                    </button>
+                </div>
+
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <div class="trust-number" data-target="15247">0</div>
+                        <div class="trust-label">Счастливых клиентов</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <div class="trust-number" data-target="50">0</div>
+                        <div class="trust-label">Лет гарантии качества</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <div class="trust-number" data-target="99">0</div>
+                        <div class="trust-label">% довольных клиентов</div>
+                    </div>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature-mini">✅ Бесплатная доставка</div>
+                    <div class="feature-mini">🎁 Подарок к заказу</div>
+                    <div class="feature-mini">💰 Возврат 100%</div>
+                    <div class="feature-mini">⚡ Готово за 24 часа</div>
+                </div>
+            </div>
+
+            <div class="hero-visual-wrapper">
+                <div class="hero-main-image" id="galleryPreview">
+                    🖼️
+                </div>
+                <div class="floating-element element-1">
+                    <div class="promo-bubble">
+                        <div class="bubble-icon">🔥</div>
+                        <div class="bubble-text">
+                            <strong>-40%</strong><br>
+                            <small>Успей забрать!</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-element element-2">
+                    <div class="promo-bubble">
+                        <div class="bubble-icon">⭐</div>
+                        <div class="bubble-text">
+                            <strong>5.0</strong><br>
+                            <small>Рейтинг</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-element element-3">
+                    <div class="promo-bubble">
+                        <div class="bubble-icon">🚚</div>
+                        <div class="bubble-text">
+                            <strong>Бесплатно</strong><br>
+                            <small>Доставка</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Акция -->
+    <section class="promo-banner" id="promo">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-icon">🎉</div>
+                <div class="promo-text">
+                    <h3>Мега предложение! Скидка <span class="highlight-yellow">40%</span> на первый заказ</h3>
+                    <p>Только сегодня! Успейте заказать со скидкой. Осталось <span class="timer" id="timer">12:34:56</span></p>
+                </div>
+                <button class="btn-promo" onclick="scrollToContact()">
+                    🎁 Забрать скидку
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card benefit-purple">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Музейное качество</h3>
+                    <p>Технология Giclée, краски премиум-класса</p>
+                </div>
+                <div class="benefit-card benefit-blue">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Печать за 24 часа</h3>
+                    <p>Самое быстрое производство в городе</p>
+                </div>
+                <div class="benefit-card benefit-green">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Гарантия 50 лет</h3>
+                    <p>Не выцветает, не трескается, не теряет цвет</p>
+                </div>
+                <div class="benefit-card benefit-orange">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Бесплатная доставка</h3>
+                    <p>По всей России от 3000₽</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Работы -->
+    <section class="works" id="works">
+        <div class="container">
+            <div class="section-header-colorful">
+                <div class="section-badge-color">
+                    ✨ Наше портфолио
+                </div>
+                <h2 class="section-title-big">
+                    Галерея <span class="rainbow-text">шедевров</span>
+                </h2>
+                <p class="section-subtitle">Посмотрите, как мы превращаем обычные фото в произведения искусства</p>
+            </div>
+
+            <div class="works-filter-colorful">
+                <button class="filter-btn-color active" data-filter="all">
+                    <span class="filter-emoji">🎨</span> Все работы
+                </button>
+                <button class="filter-btn-color" data-filter="portrait">
+                    <span class="filter-emoji">👤</span> Портреты
+                </button>
+                <button class="filter-btn-color" data-filter="landscape">
+                    <span class="filter-emoji">🏔️</span> Пейзажи
+                </button>
+                <button class="filter-btn-color" data-filter="family">
+                    <span class="filter-emoji">👨‍👩‍👧‍👦</span> Семейные
+                </button>
+                <button class="filter-btn-color" data-filter="abstract">
+                    <span class="filter-emoji">✨</span> Абстракция
+                </button>
+                <button class="filter-btn-color" data-filter="pets">
+                    <span class="filter-emoji">🐕</span> Питомцы
+                </button>
+            </div>
+
+            <div class="works-grid-colorful" id="worksGrid">
+                <!-- Динамически загружается -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header-colorful">
+                <div class="section-badge-color">
+                    💎 Наши услуги
+                </div>
+                <h2 class="section-title-big">
+                    Выберите идеальный <span class="gradient-text">вариант</span>
+                </h2>
+                <p class="section-subtitle">Все услуги со скидкой 40% для новых клиентов</p>
+            </div>
+
+            <div class="services-grid-colorful" id="servicesGrid">
+                <!-- Динамически загружается -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header-colorful">
+                <div class="section-badge-color">
+                    🚀 Как это работает
+                </div>
+                <h2 class="section-title-big">
+                    Заказать <span class="rainbow-text">проще простого</span>
+                </h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-card step-1">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📤</div>
+                    <h3>Отправьте фото</h3>
+                    <p>Загрузите любимое фото через форму заказа</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-card step-2">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🎨</div>
+                    <h3>Выберите формат</h3>
+                    <p>Подберём размер и тип печати под ваш интерьер</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-card step-3">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">✅</div>
+                    <h3>Согласуйте макет</h3>
+                    <p>Утвердите предпросмотр перед печатью</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-card step-4">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🎁</div>
+                    <h3>Получите шедевр</h3>
+                    <p>Доставим готовую работу за 24-48 часов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header-colorful">
+                <div class="section-badge-color">
+                    💬 Отзывы клиентов
+                </div>
+                <h2 class="section-title-big">
+                    Что говорят наши <span class="gradient-text">клиенты</span>
+                </h2>
+                <p class="section-subtitle">Более 15 000 довольных клиентов по всей России</p>
+            </div>
+
+            <div class="reviews-grid-colorful" id="reviewsGrid">
+                <!-- Динамически загружается -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="cta-section-big">
+        <div class="cta-bg-gradient"></div>
+        <div class="container">
+            <div class="cta-content-big">
+                <div class="cta-emoji">🎉</div>
+                <h2>Готовы создать свой шедевр?</h2>
+                <p>Закажите прямо сейчас и получите скидку <span class="highlight-price">40%</span> + подарок к заказу! 🎁</p>
+                <div class="cta-buttons">
+                    <button class="btn-cta-primary" onclick="scrollToContact()">
+                        <span class="btn-shine"></span>
+                        🚀 Заказать со скидкой
+                    </button>
+                    <div class="cta-guarantee">
+                        <span class="guarantee-icon">✅</span>
+                        <span>Гарантия возврата денег</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper-colorful">
+                <div class="contact-info-colorful">
+                    <div class="contact-header">
+                        <h2>Закажите сейчас!</h2>
+                        <p>Заполните форму и получите персональную скидку 40% 🎁</p>
+                    </div>
+
+                    <div class="contact-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">⚡</div>
+                            <div>
+                                <h4>Ответим за 5 минут</h4>
+                                <p>Консультация бесплатно</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎨</div>
+                            <div>
+                                <h4>Печать за 24 часа</h4>
+                                <p>Самое быстрое производство</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚚</div>
+                            <div>
+                                <h4>Бесплатная доставка</h4>
+                                <p>По всей России от 3000₽</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-methods-colorful">
+                        <a href="tel:+78005553535" class="method-link">
+                            <span class="method-emoji">📞</span>
+                            <span>+7 (800) 555-35-35</span>
+                        </a>
+                        <a href="mailto:info@karsprint.ru" class="method-link">
+                            <span class="method-emoji">✉️</span>
+                            <span>info@karsprint.ru</span>
+                        </a>
+                        <div class="method-link">
+                            <span class="method-emoji">⏰</span>
+                            <span>Работаем 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form-colorful" id="contactForm">
+                    <div class="form-header">
+                        <h3>Оставьте заявку</h3>
+                        <div class="discount-badge">-40% 🔥</div>
+                    </div>
+                    
+                    <div class="form-field-colorful">
+                        <label>👤 Ваше имя</label>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form-field-colorful">
+                        <label>📞 Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+
+                    <div class="form-field-colorful">
+                        <label>✉️ Email</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                    </div>
+
+                    <div class="form-field-colorful">
+                        <label>🎨 Услуга</label>
+                        <select id="service" name="service">
+                            <option value="">Выберите услугу</option>
+                            <option value="canvas">Печать на холсте</option>
+                            <option value="premium">Премиум с рамой</option>
+                            <option value="modular">Модульная картина</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field-colorful">
+                        <label>💬 Комментарий</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Расскажите о вашем заказе..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-form-submit">
+                        <span class="btn-shine"></span>
+                        🚀 Отправить заявку
+                    </button>
+                    
+                    <p class="form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer-colorful">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-about">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
+                                <circle cx="22.5" cy="22.5" r="22.5" fill="url(#paint0_linear2)"/>
+                                <path d="M13 23L19 29L32 16" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="paint0_linear2" x1="0" y1="0" x2="45" y2="45">
+                                        <stop stop-color="#FF3CAC"/>
+                                        <stop offset="0.5" stop-color="#784BA0"/>
+                                        <stop offset="1" stop-color="#2B86C5"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Kars <span class="logo-accent">Print</span></span>
+                    </div>
+                    <p>Превращаем ваши воспоминания в произведения искусства с 2015 года. Более 15 000 довольных клиентов!</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-btn">VK</a>
+                        <a href="#" class="social-btn">Instagram</a>
+                        <a href="#" class="social-btn">Telegram</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><a href="#hero">Главная</a></li>
+                            <li><a href="#works">Галерея</a></li>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Услуги</h4>
+                        <ul>
+                            <li><a href="#services">Печать на холсте</a></li>
+                            <li><a href="#services">Модульные картины</a></li>
+                            <li><a href="#services">Премиум рамы</a></li>
+                            <li><a href="#services">Доставка</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li>📞 +7 (800) 555-35-35</li>
+                            <li>✉️ info@karsprint.ru</li>
+                            <li>⏰ Работаем 24/7</li>
+                            <li>📍 Москва, Россия</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kars Print. Все права защищены.</p>
+                <div class="footer-payments">
+                    <span>💳 Принимаем:</span>
+                    <span class="payment-badge">Visa</span>
+                    <span class="payment-badge">MasterCard</span>
+                    <span class="payment-badge">МИР</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Админ панель (без изменений) -->
+    <div class="admin-overlay" id="adminOverlay">
+        <div class="admin-panel" id="adminPanel">
+            <div class="admin-header">
+                <h2>🎨 Панель администратора</h2>
+                <button class="admin-close" onclick="closeAdminPanel()">×</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="works">📸 Работы</button>
+                <button class="admin-tab" data-tab="services">💎 Услуги</button>
+                <button class="admin-tab" data-tab="reviews">⭐ Отзывы</button>
+                <button class="admin-tab" data-tab="orders">📋 Заявки</button>
+            </div>
+
+            <div class="admin-content active" id="admin-works">
+                <div class="admin-toolbar">
+                    <button class="btn-admin-action" onclick="openAddWorkModal()">
+                        ➕ Добавить работу
+                    </button>
+                </div>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Превью</th>
+                                <th>Название</th>
+                                <th>Категория</th>
+                                <th>Размер</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminWorksTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-content" id="admin-services">
+                <div class="admin-toolbar">
+                    <button class="btn-admin-action" onclick="openAddServiceModal()">
+                        ➕ Добавить услугу
+                    </button>
+                </div>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Иконка</th>
+                                <th>Название</th>
+                                <th>Цена</th>
+                                <th>Популярная</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminServicesTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-content" id="admin-reviews">
+                <div class="admin-toolbar">
+                    <button class="btn-admin-action" onclick="openAddReviewModal()">
+                        ➕ Добавить отзыв
+                    </button>
+                </div>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Автор</th>
+                                <th>Рейтинг</th>
+                                <th>Отзыв</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminReviewsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-content" id="admin-orders">
+                <div class="admin-toolbar">
+                    <div class="admin-stats">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value" id="totalOrders">0</div>
+                            <div class="admin-stat-label">Всего заявок</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-value" id="newOrders">0</div>
+                            <div class="admin-stat-label">Новые</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
+                                <th>Услуга</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальные окна -->
+    <div class="modal" id="addWorkModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить работу</h3>
+                <button class="modal-close" onclick="closeAddWorkModal()">×</button>
+            </div>
+            <form id="addWorkForm" class="modal-form">
+                <div class="form-field">
+                    <label>Название</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="form-field">
+                    <label>Категория</label>
+                    <select name="category" required>
+                        <option value="portrait">Портрет</option>
+                        <option value="landscape">Пейзаж</option>
+                        <option value="family">Семейное</option>
+                        <option value="abstract">Абстракция</option>
+                        <option value="pets">Питомцы</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label>Размер</label>
+                    <input type="text" name="size" placeholder="60x80 см" required>
+                </div>
+                <div class="form-field">
+                    <label>Эмодзи (для превью)</label>
+                    <input type="text" name="emoji" placeholder="🎨" maxlength="2" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddWorkModal()">Отмена</button>
+                    <button type="submit" class="btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="addServiceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить услугу</h3>
+                <button class="modal-close" onclick="closeAddServiceModal()">×</button>
+            </div>
+            <form id="addServiceForm" class="modal-form">
+                <div class="form-field">
+                    <label>Название</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="form-field">
+                    <label>Описание</label>
+                    <textarea name="description" rows="3" required></textarea>
+                </div>
+                <div class="form-field">
+                    <label>Цена (от)</label>
+                    <input type="number" name="price" placeholder="2990" required>
+                </div>
+                <div class="form-field">
+                    <label>Иконка (эмодзи)</label>
+                    <input type="text" name="icon" placeholder="🎨" maxlength="2" required>
+                </div>
+                <div class="form-field">
+                    <label>Особенности (через запятую)</label>
+                    <input type="text" name="features" placeholder="Натуральный холст, Устойчивые краски" required>
+                </div>
+                <div class="form-field checkbox-field">
+                    <label>
+                        <input type="checkbox" name="popular">
+                        Отметить как популярную
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddServiceModal()">Отмена</button>
+                    <button type="submit" class="btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="addReviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить отзыв</h3>
+                <button class="modal-close" onclick="closeAddReviewModal()">×</button>
+            </div>
+            <form id="addReviewForm" class="modal-form">
+                <div class="form-field">
+                    <label>Имя автора</label>
+                    <input type="text" name="author" required>
+                </div>
+                <div class="form-field">
+                    <label>Рейтинг</label>
+                    <select name="rating" required>
+                        <option value="5">5 звёзд</option>
+                        <option value="4">4 звезды</option>
+                        <option value="3">3 звезды</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label>Текст отзыва</label>
+                    <textarea name="text" rows="4" required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddReviewModal()">Отмена</button>
+                    <button type="submit" class="btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
